@@ -36,10 +36,6 @@ export function Hero() {
                     Monday - Sunday | 10:00 AM to 8:00 PM
                   </h4>
                 </div>
-
-                <div className="hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
-                  <Button href="#"> Book Your Appointment</Button>
-                </div>
               </div>
             </div>
           </div>
@@ -108,15 +104,16 @@ export function Hero() {
                   </div>
                 </div>
 
+                {/* Time slot dropdown */}
                 <div className="sm:col-span-1 mb-6">
                   <label htmlFor="time-slot" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                     Select Time Slot
                   </label>
-                  <div className="mt-2">
+                  <div className="mt-2 relative">
                     <select
                       id="time-slot"
                       name="time-slot"
-                      className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 focus:border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 hover:border-gray-400 active:text-gray-700 placeholder-[#B5B5B5]"
+                      className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 focus:border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 hover:border-gray-400 active:text-gray-700 placeholder-[#B5B5B5] appearance-none"
                     >
                       <option value="">Select a time slot</option>
                       <option value="9:00AM">9:00 AM</option>
@@ -128,6 +125,13 @@ export function Hero() {
                       <option value="3:00PM">3:00 PM</option>
                       <option value="4:00PM">4:00 PM</option>
                     </select>
+
+                    {/* Custom Dropdown Arrow */}
+                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -147,8 +151,12 @@ export function Hero() {
                   />
                 </div>
               </div>
+              <div className=" w-full hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
+                <Button className=" w-full" href="#"> Book Your Appointment</Button>
+              </div>
             </div>
           </div>
+
         </div>
         <div className="mx-auto">
           <dl className="mt-10 flex justify-evenly gap-6 sm:mt-16 sm:gap-10 lg:gap-12">
