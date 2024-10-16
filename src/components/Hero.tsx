@@ -89,10 +89,10 @@ export function Hero() {
                     type="email"
                     autoComplete="email"
                     placeholder="Enter your email"
+                    className="w-full"
                   />
                 </div>
               </div>
-
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-1 md:grid-cols-2">
                 <div className="sm:col-span-1 mb-6">
                   <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
@@ -103,6 +103,7 @@ export function Hero() {
                       id="appointment-date"
                       name="appointment-date"
                       type="date"
+                      className="w-full"
                     />
                   </div>
                 </div>
@@ -115,7 +116,7 @@ export function Hero() {
                     <select
                       id="time-slot"
                       name="time-slot"
-                      className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 focus:border-0 focus:outline-none"
+                      className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 focus:border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 hover:border-gray-400 active:text-gray-700 placeholder-[#B5B5B5]"
                     >
                       <option value="">Select a time slot</option>
                       <option value="9:00AM">9:00 AM</option>
@@ -131,6 +132,7 @@ export function Hero() {
                 </div>
               </div>
 
+
               <div className="mb-6">
                 <label htmlFor="reason-for-visit" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                   Reason for Visit
@@ -141,6 +143,7 @@ export function Hero() {
                     name="reason-for-visit"
                     as="textarea"
                     placeholder="Enter the reason for your visit"
+                    className='w-full'
                   />
                 </div>
               </div>
