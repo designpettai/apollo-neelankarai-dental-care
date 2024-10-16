@@ -40,7 +40,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="md:basis-1/2 mx-auto max-w-2xl lg:max-w-4xl px-4 py-6">
+          <div className="w-full md:basis-1/2 mx-auto px-4 py-6">
             <div className="bg-[#fff] rounded-[20px] p-6 md:p-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-1 md:grid-cols-2">
                 <div className="sm:col-span-1 mb-6">
