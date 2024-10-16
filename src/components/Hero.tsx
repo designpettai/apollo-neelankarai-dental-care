@@ -140,11 +140,9 @@ export function Hero() {
                     id="reason-for-visit"
                     name="reason-for-visit"
                     as="textarea"
-                    rows={5}
                     placeholder="Enter the reason for your visit"
                   />
                 </div>
-
               </div>
             </div>
           </div>
