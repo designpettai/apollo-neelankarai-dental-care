@@ -159,14 +159,14 @@ export function Hero() {
 
         </div>
         <div className="mx-auto">
-          <dl className="mt-10 flex justify-evenly gap-6 sm:mt-16 sm:gap-10 lg:gap-12">
+          <dl className="mt-10 flex flex-col sm:flex-row justify-evenly gap-6 sm:mt-16 sm:gap-10 lg:gap-12">
             {[
               ['Happy Patients', '25L+'],
               ['Specialists', '500'],
               ['Cities', '25'],
               ['Location', '175']
             ].map(([name, value]) => (
-              <div key={name} className="w-1/4 text-center lg:text-center">
+              <div key={name} className="flex-1 text-center sm:w-1/2 md:w-1/4 w-full mb-6 sm:mb-0">
                 <dt className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-900 mb-2">{name}</dt>
                 <dd className="mt-0.5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-500">
                   <span className="count-up">{value}</span>
