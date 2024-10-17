@@ -1,6 +1,6 @@
 import { MdChatBubbleOutline, MdLocalHospital, Md3dRotation } from 'react-icons/md';
-import { Button } from '@/components/Button'; // Assuming Button is imported here.
-import { Container } from '@/components/Container'; // Assuming Container is imported here.
+import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
 import { BackgroundImage } from '@/components/BackgroundImage';
 
 export function Service() {
@@ -30,6 +30,7 @@ export function Service() {
                         ))}
                     </div>
                 </div>
+
             </Container>
         </div>
     );
