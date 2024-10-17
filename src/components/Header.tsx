@@ -2,6 +2,8 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { DiamondIcon } from '@/components/DiamondIcon'
 import { Logo } from '@/components/Logo'
+import { MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
+
 
 export function Header() {
   return (
@@ -10,19 +12,34 @@ export function Header() {
         <div className="mt-10 lg:mt-0 lg:grow lg:basis-0">
           <Logo className="h-12 w-auto text-slate-900" />
         </div>
-        <div className="order-first -mx-4 flex flex-auto basis-full overflow-x-auto whitespace-nowrap border-b border-blue-600/10 py-4 font-mono text-sm text-blue-600 sm:-mx-6 lg:order-none lg:mx-0 lg:basis-auto lg:border-0 lg:py-0">
-          <div className="mx-auto flex items-center gap-4 px-4">
-            <p>
-              <time dateTime="2022-04-04">04</time>-
-              <time dateTime="2022-04-06">06 of April, 2022</time>
-            </p>
-            <DiamondIcon className="h-1.5 w-1.5 overflow-visible fill-current stroke-current" />
-            <p>Los Angeles, CA</p>
+        <div>
+          <div className="text-right flex-col flex">
+            <div className="text-right flex mb-4 border-b border-[#333] py-4">
+              <div className='flex items-center text-right text-gray-900 mr-16'>
+                <MdEmail className="mr-2 text-2xl" /> Email: apollodentalsuchitra@gmail.com
+              </div>
+              <div className='flex items-center text-right text-lg text-blue-600'>
+                <MdLocationOn className="mr-2 text-2xl" /> Find Location
+              </div>
+            </div>
+            <div className='grid justify-items-end'>
+              <div className='flex items-center align-center text-right'>
+                <div className="flex items-center justify-center h-16 w-16 bg-blue-500 rounded-full mr-2">
+                  <MdPhone className="text-white text-2xl" />
+                </div>
+                <div className="flex flex-col items-center text-md font-semibold">
+                  <span>Emergency? Call us!</span>
+                  <span className="text-red-500">90003-38933</span>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
-        <div className="hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0 lg:justify-end">
+        {/* <div className="hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0 lg:justify-end">
           <Button href="#">Get your tickets</Button>
-        </div>
+        </div> */}
       </Container>
     </header>
   )

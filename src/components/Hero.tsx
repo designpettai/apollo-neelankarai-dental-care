@@ -5,10 +5,10 @@ import { Input } from '@/components/input'
 
 export function Hero() {
   return (
-    <div className="relative py-20 sm:pb-24 sm:pt-36">
-      <BackgroundImage className="-bottom-14 -top-36" />
+    <div className="relative py-12 sm:pb-8 sm:pt-8">
+      <BackgroundImage className="-bottom-0 top-8" />
       <Container className="relative">
-        <div className='flex flex-col gap-4 md:flex-row md:gap-4 justify-between items-center'>
+        <div className='flex flex-col gap-4 md:flex-row md:gap-4 justify-between items-center py-4'>
           <div className="md:basis-1/2 mx-auto">
             <div className="py-16 px-4 sm:px-6 lg:px-8">
               <div className="max-w-7xl mx-auto">
