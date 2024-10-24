@@ -1,12 +1,30 @@
-"use client"; 
-import React, { useState } from 'react';
+"use client";
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { BackgroundImage } from '@/components/BackgroundImage';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Input } from '@/components/input';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  appointmentDate: string;
+  timeSlot: string;
+  reasonForVisit: string;
+}
+
+interface Errors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  appointmentDate?: string;
+  timeSlot?: string;
+  reasonForVisit?: string;
+}
+
 export function Hero() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
@@ -15,10 +33,10 @@ export function Hero() {
     reasonForVisit: '',
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Errors>({});
 
-  const validate = () => {
-    const newErrors = {};
+  const validate = (): Errors => {
+    const newErrors: Errors = {};
     if (!formData.firstName) newErrors.firstName = 'First name is required';
     if (!formData.lastName) newErrors.lastName = 'Last name is required';
     if (!formData.email) {
@@ -32,7 +50,7 @@ export function Hero() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
@@ -43,11 +61,11 @@ export function Hero() {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: undefined }); // Clear error on change
+    if (errors[name as keyof Errors]) {
+      setErrors({ ...errors, [name as keyof Errors]: undefined }); // Clear error on change
     }
   };
 
