@@ -1,34 +1,74 @@
+'use client';
+
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
-import { MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const navigation = [
+    { name: 'About Us', href: '#about' },
+    { name: 'Specialties', href: '#specialties' },
+    { name: 'Dental Clinics', href: '#clinics' },
+    { name: 'Find a Dentist', href: '#find' },
+  ];
+
   return (
     <header className="relative z-50 flex-none lg:pt-11">
-      <Container className="flex flex-wrap items-center justify-center sm:justify-between lg:flex-nowrap">
-        <div className="mt-10 lg:mt-0 lg:grow lg:basis-0">
+      <Container className="flex flex-wrap items-center justify-between lg:flex-nowrap">
+        <div className="my-4 lg:mt-0 lg:grow lg:basis-0">
           <Logo className="h-12 w-auto text-slate-900" />
         </div>
-        <div className="flex flex-col items-center text-right">
-          <div className="mb-2 border-b border-[#333] py-4">
-            <div className="flex items-center text-gray-900 mb-2">
-              <MdEmail className="mr-2 text-2xl" /> Email: apollodentalsuchitra@gmail.com
-            </div>
-            <div className="flex items-center text-lg text-blue-600">
-              <MdLocationOn className="mr-2 text-2xl" /> Find Location
-            </div>
-          </div>
-          <div className="flex items-center align-center mb-2">
-            <div className="flex items-center justify-center h-16 w-16 bg-blue-500 rounded-full mr-2">
-              <MdPhone className="text-white text-2xl" />
-            </div>
-            <div className="flex flex-col items-center text-md font-semibold">
-              <span>Emergency? Call us!</span>
-              <span className="text-red-500">90003-38933</span>
-            </div>
-          </div>
+
+        <div className="hidden md:flex md:space-x-8">
+          {navigation.map((item) => (
+            <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-900">
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex md:hidden">
+          <button onClick={toggleMenu} className="text-gray-600 hover:text-gray-900 focus:outline-none">
+            <Bars3Icon className="w-6 h-6" />
+          </button>
         </div>
       </Container>
+
+      <Dialog open={isMenuOpen} onClose={closeMenu} className="md:hidden">
+        <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeMenu}></div>
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white p-6">
+          <div className="flex items-center justify-between">
+            <Logo className="h-8 w-auto text-slate-900" />
+            <button onClick={closeMenu} className="text-gray-600">
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="mt-6 space-y-2 text-center">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                onClick={closeMenu}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </DialogPanel>
+      </Dialog>
     </header>
   );
 }

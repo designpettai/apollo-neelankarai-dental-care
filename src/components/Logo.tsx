@@ -1,30 +1,25 @@
-import Image from 'next/image'
-import clsx from 'clsx'
+import Image from 'next/image';
+import clsx from 'clsx';
+import LogoSrc from '@/images/apollo-logo.jpg'; 
 
-import logoImage from '@/images/apollo-logo.jpg'
+interface LogoProps {
+  className?: string;
+  position?: 'left' | 'right';
+}
 
-export function Logo({
-  className,
-  position = 'left',
-}: {
-  className?: string
-  position?: 'left' | 'right'
-}) {
+export const Logo = ({ className, position = 'left' }: LogoProps) => {
   return (
-    <div
-      className={clsx(
-        'relative w-full h-full', // Define container size
-        className,
-      )}
-    >
+    <div className={clsx(className)}>
       <Image
-        src={logoImage}
-        alt="Apollo Logo"
-        width={185} // Set the desired width
-        height={118} // Set the desired height
+        className={clsx(
+          position === 'left' ? 'left-image-class' : 'right-image-class',
+          'h-16 w-auto'
+        )}
+        src={LogoSrc}
+        alt="Apollo Dental Logo"
         priority
         unoptimized
       />
     </div>
-  )
-}
+  );
+};
