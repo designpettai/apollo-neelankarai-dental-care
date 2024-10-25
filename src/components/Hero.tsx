@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import axios from 'axios';
 import { BackgroundImage } from '@/components/BackgroundImage';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
@@ -50,12 +51,24 @@ export function Hero() {
     return newErrors;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
-      // Handle form submission, e.g., send data to an API
-      console.log('Form data:', formData);
+      try {
+        const response = await axios.post('http://localhost:5000/send-email', formData);
+        console.log('Email sent successfully:', response.data);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          appointmentDate: '',
+          timeSlot: '',
+          reasonForVisit: '',
+        });
+      } catch (error) {
+        console.error;
+      }
     } else {
       setErrors(validationErrors);
     }
