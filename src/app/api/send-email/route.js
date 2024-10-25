@@ -10,14 +10,14 @@
 //     port: 587,
 //     secure: false, // Set to true for 465, false for other ports
 //     auth: {
-//       user: EMAIL_USER, // Use environment variable for your email
-//       pass: EMAIL_PASS, // Use environment variable for your password
+//       user: process.env.EMAIL_USER, // Use environment variable for your email
+//       pass: process.env.EMAIL_PASS, // Use environment variable for your password
 //     },
 //   });
 
 //   const appointmentRequestMailOptions = {
-//     from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
-//     to: `"Appointment System" <${EMAIL_USER}>`, // Sender address
+//     from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
+//     to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
 //     subject: 'New Appointment Request',
 //     text: `You have a new appointment request from ${firstName} ${lastName}.\n\n` +
 //       `Email: ${email}\n` +
@@ -27,7 +27,7 @@
 //   };
 
 //   const confirmationMailOptions = {
-//     from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
+//     from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
 //     to: email, // Confirmation email to the user
 //     subject: 'Appointment Confirmation',
 //     text: `Thanks for booking an appointment, ${firstName}! Your appointment has been successfully scheduled for ${appointmentDate} at ${timeSlot}.`,
@@ -53,16 +53,16 @@ import nodemailer from 'nodemailer';
 export async function POST(req) {
   const { firstName, lastName, email, appointmentDate, timeSlot, reasonForVisit } = await req.json();
 
-
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
     auth: {
-      user:EMAIL_USER,
-      pass:EMAIL_PASS,
+      user: process.env.EMAIL_USER, 
+      pass: process.env.EMAIL_PASS,
     },
   });
+
 
   const confirmationTemplate = (firstName, appointmentDate, timeSlot) => `
   <!DOCTYPE html>
@@ -110,8 +110,8 @@ export async function POST(req) {
   `;
 
   const appointmentRequestMailOptions = {
-    from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
-    to: `"Appointment System" <${EMAIL_USER}>`, // Internal notification
+    from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
+    to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Internal notification
     subject: 'New Appointment Request',
     text: `You have a new appointment request from ${firstName} ${lastName}.\n\n` +
       `Email: ${email}\n` +
@@ -121,13 +121,14 @@ export async function POST(req) {
   };
 
   const confirmationMailOptions = {
-    from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
-    to: email, // Confirmation email to the user
+    from: `"Appointment System" <${process.env.EMAIL_USER}>`, 
+    to: email,
     subject: 'Appointment Confirmation',
-    html: confirmationTemplate(firstName, appointmentDate, timeSlot), // Use the HTML template here
+    html: confirmationTemplate(firstName, appointmentDate, timeSlot),
   };
 
   try {
+
     await transporter.sendMail(appointmentRequestMailOptions);
     await transporter.sendMail(confirmationMailOptions);
     
