@@ -1,4 +1,56 @@
+// // server.js
 
+// const express = require('express');
+// const nodemailer = require('nodemailer');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+// require('dotenv').config(); // Load environment variables from .env
+
+// const app = express();
+// const PORT = process.env.PORT || 5000;
+
+// app.use(cors());
+// app.use(bodyParser.json());
+
+// // Endpoint to send email
+// app.post('/send-email', async (req, res) => {
+//   const { firstName, lastName, email, appointmentDate, timeSlot, reasonForVisit } = req.body;
+
+//   const transporter = nodemailer.createTransport({
+//     service: 'Gmail', // or another email service
+//     auth: {
+//       user: process.env.EMAIL,
+//       pass: process.env.APP_PASSWORD,
+//     },
+//   });
+
+//   const mailOptions = {
+//     from: email, 
+//     to: 'gsaravanakumar1101@gmail.com', 
+//     subject: 'New Appointment Booking',
+//     text: `You have a new appointment booking from ${firstName} ${lastName}.\n\n` +
+//           `Email: ${email}\n` +
+//           `Appointment Date: ${appointmentDate}\n` +
+//           `Time Slot: ${timeSlot}\n` +
+//           `Reason for Visit: ${reasonForVisit}`,
+//   };
+
+//   try {
+//     await transporter.sendMail(mailOptions);
+//     res.status(200).send('Email sent successfully');
+//   } catch (error) {
+//     console.error('Error sending email:', error.message);
+//     res.status(500).send('Error sending email');
+//   }
+// });
+
+// // Start the server
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
+
+// server.js
 
 const express = require('express');
 const nodemailer = require('nodemailer');
