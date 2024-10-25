@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useCallback } from 'react';
 import axios from 'axios';
 import { BackgroundImage } from '@/components/BackgroundImage';
 import { Button } from '@/components/Button';
@@ -36,7 +36,7 @@ export function Hero() {
 
   const [errors, setErrors] = useState<Errors>({});
 
-  const validate = (): Errors => {
+  const validate = useCallback((): Errors => {
     const newErrors: Errors = {};
     if (!formData.firstName) newErrors.firstName = 'First name is required';
     if (!formData.lastName) newErrors.lastName = 'Last name is required';
@@ -49,15 +49,15 @@ export function Hero() {
     if (!formData.timeSlot) newErrors.timeSlot = 'Time slot is required';
     if (!formData.reasonForVisit) newErrors.reasonForVisit = 'Reason for visit is required';
     return newErrors;
-  };
+  }, [formData]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await axios.post('http://localhost:5000/send-email', formData);
-        console.log('Email sent successfully:', response.data);
+        const response = await axios.post('/api/send-email', formData);
+        alert('Appointment booked successfully!');
         setFormData({
           firstName: '',
           lastName: '',
@@ -67,7 +67,7 @@ export function Hero() {
           reasonForVisit: '',
         });
       } catch (error) {
-        console.error;
+        alert('There was an error booking your appointment. Please try again later.');
       }
     } else {
       setErrors(validationErrors);
@@ -76,11 +76,11 @@ export function Hero() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    if (errors[name as keyof Errors]) {
-      setErrors({ ...errors, [name as keyof Errors]: undefined }); // Clear error on change
-    }
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: undefined }));
   };
+
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <div className="relative py-12 sm:pb-8 sm:pt-8">
@@ -189,6 +189,7 @@ export function Hero() {
                         className="w-full"
                         value={formData.appointmentDate}
                         onChange={handleChange}
+                        min={today} // Set the min attribute to today's date
                       />
                       {errors.appointmentDate && <p className="text-red-500 text-xs">{errors.appointmentDate}</p>}
                     </div>
@@ -243,8 +244,8 @@ export function Hero() {
                     {errors.reasonForVisit && <p className="text-red-500 text-xs">{errors.reasonForVisit}</p>}
                   </div>
                 </div>
-                <div className=" w-full hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
-                  <Button className=" w-full" type="submit">Book Your Appointment</Button>
+                <div className="w-full hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
+                  <Button className="w-full" type="submit">Book Your Appointment</Button>
                 </div>
               </div>
             </div>
