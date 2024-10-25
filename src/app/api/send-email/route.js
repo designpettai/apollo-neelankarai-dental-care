@@ -53,18 +53,17 @@ import nodemailer from 'nodemailer';
 export async function POST(req) {
   const { firstName, lastName, email, appointmentDate, timeSlot, reasonForVisit } = await req.json();
 
-  // Set up nodemailer transport
+
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com', // Example for Gmail
+    host: 'smtp.gmail.com',
     port: 587,
-    secure: false, // Set to true for 465, false for other ports
+    secure: false,
     auth: {
-      user: process.env.EMAIL_USER, // Use environment variable for your email
-      pass: process.env.EMAIL_PASS, // Use environment variable for your password
+      user:EMAIL_USER,
+      pass:EMAIL_PASS,
     },
   });
 
-  // HTML template for confirmation email
   const confirmationTemplate = (firstName, appointmentDate, timeSlot) => `
   <!DOCTYPE html>
   <html lang="en">
@@ -129,9 +128,7 @@ export async function POST(req) {
   };
 
   try {
-    // Send appointment request email
     await transporter.sendMail(appointmentRequestMailOptions);
-    // Send confirmation email to the user
     await transporter.sendMail(confirmationMailOptions);
     
     return new Response(JSON.stringify({ message: 'Emails sent successfully' }), { status: 200 });
