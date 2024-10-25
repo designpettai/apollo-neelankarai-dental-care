@@ -10,14 +10,14 @@
 //     port: 587,
 //     secure: false, // Set to true for 465, false for other ports
 //     auth: {
-//       user: process.env.EMAIL_USER, // Use environment variable for your email
-//       pass: process.env.EMAIL_PASS, // Use environment variable for your password
+//       user: EMAIL_USER, // Use environment variable for your email
+//       pass: EMAIL_PASS, // Use environment variable for your password
 //     },
 //   });
 
 //   const appointmentRequestMailOptions = {
-//     from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
-//     to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
+//     from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
+//     to: `"Appointment System" <${EMAIL_USER}>`, // Sender address
 //     subject: 'New Appointment Request',
 //     text: `You have a new appointment request from ${firstName} ${lastName}.\n\n` +
 //       `Email: ${email}\n` +
@@ -27,7 +27,7 @@
 //   };
 
 //   const confirmationMailOptions = {
-//     from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
+//     from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
 //     to: email, // Confirmation email to the user
 //     subject: 'Appointment Confirmation',
 //     text: `Thanks for booking an appointment, ${firstName}! Your appointment has been successfully scheduled for ${appointmentDate} at ${timeSlot}.`,
@@ -110,8 +110,8 @@ export async function POST(req) {
   `;
 
   const appointmentRequestMailOptions = {
-    from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
-    to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Internal notification
+    from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
+    to: `"Appointment System" <${EMAIL_USER}>`, // Internal notification
     subject: 'New Appointment Request',
     text: `You have a new appointment request from ${firstName} ${lastName}.\n\n` +
       `Email: ${email}\n` +
@@ -121,7 +121,7 @@ export async function POST(req) {
   };
 
   const confirmationMailOptions = {
-    from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
+    from: `"Appointment System" <${EMAIL_USER}>`, // Sender address
     to: email, // Confirmation email to the user
     subject: 'Appointment Confirmation',
     html: confirmationTemplate(firstName, appointmentDate, timeSlot), // Use the HTML template here
