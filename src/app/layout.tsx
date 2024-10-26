@@ -1,29 +1,24 @@
+// app/layout.tsx
 import { type Metadata } from 'next'
-import { DM_Sans, Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import clsx from 'clsx'
-
+import '@/styles/font.css'
 import '@/styles/tailwind.css'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
-  variable: '--font-inter',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-  variable: '--font-dm-sans',
+  variable: '--font-poppins',
 })
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - DeceptiConf',
-    default: 'DeceptiConf - A community-driven design conference',
+    template: '%s - Dental Hospital',
+    default: 'Dental Hospital - Your Smile, Our Priority',
   },
   description:
-    'At DeceptiConf you’ll learn about the latest dark patterns being developed to trick even the smartest visitors, and you’ll learn how to deploy them without ever being detected.',
+    'At Dental Hospital, we are committed to providing the highest quality dental care for you and your family. Discover our comprehensive services and meet our experienced team dedicated to your oral health.',
 }
 
 export default function RootLayout({
@@ -36,11 +31,11 @@ export default function RootLayout({
       lang="en"
       className={clsx(
         'h-full bg-white antialiased',
-        inter.variable,
-        dmSans.variable,
+        poppins.variable,
+        'font-poppins'
       )}
     >
-      <body className="flex min-h-full">
+      <body className="flex min-h-full font-poppins">
         <div className="flex w-full flex-col">{children}</div>
       </body>
     </html>

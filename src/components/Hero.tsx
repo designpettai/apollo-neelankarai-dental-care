@@ -91,7 +91,7 @@ export function Hero() {
             <div className="md:basis-1/2 mx-auto">
               <div className="py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                  <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                  <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
                     Let Your Smile Shine with Confidence
                   </h1>
                   <p className="mt-4 text-lg text-gray-600">
@@ -120,7 +120,7 @@ export function Hero() {
 
             <div className="w-full md:basis-1/2 mx-auto px-4 py-6">
               <div className="bg-[#fff] rounded-[20px] p-6 md:p-12">
-                <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
                   <div className="sm:col-span-1 mb-6">
                     <label htmlFor="first-name" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                       First name
@@ -134,6 +134,7 @@ export function Hero() {
                         placeholder="Enter your first name"
                         value={formData.firstName}
                         onChange={handleChange}
+                        className='w-full'
                       />
                       {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName}</p>}
                     </div>
@@ -152,6 +153,7 @@ export function Hero() {
                         placeholder="Enter your last name"
                         value={formData.lastName}
                         onChange={handleChange}
+                        className='w-full'
                       />
                       {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName}</p>}
                     </div>
@@ -176,7 +178,7 @@ export function Hero() {
                     {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                   </div>
                 </div>
-                <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
                   <div className="sm:col-span-1 mb-6">
                     <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                       Date of Appointment
@@ -189,7 +191,7 @@ export function Hero() {
                         className="w-full"
                         value={formData.appointmentDate}
                         onChange={handleChange}
-                        min={today} // Set the min attribute to today's date
+                        min={today} 
                       />
                       {errors.appointmentDate && <p className="text-red-500 text-xs">{errors.appointmentDate}</p>}
                     </div>

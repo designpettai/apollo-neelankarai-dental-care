@@ -48,14 +48,14 @@ export function Header() {
 
       <Dialog open={isMenuOpen} onClose={closeMenu} className="md:hidden">
         <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeMenu}></div>
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white p-6">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6">
           <div className="flex items-center justify-between">
             <Logo className="h-8 w-auto text-slate-900" />
             <button onClick={closeMenu} className="text-gray-600">
               <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
-          <div className="mt-6 space-y-2 text-center">
+          <div className="mt-12 space-y-2 text-center">
             {navigation.map((item) => (
               <a
                 key={item.name}

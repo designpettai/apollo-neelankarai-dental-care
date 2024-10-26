@@ -9,7 +9,7 @@ import { Experience } from '@/components/Experiance'
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div style={{ fontFamily: 'Poppins' }}>
       <Hero />
       <Service />
       <Experience />

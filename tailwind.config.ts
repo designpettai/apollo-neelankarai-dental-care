@@ -25,8 +25,8 @@ export default {
         '5xl': '2.5rem',
       },
       fontFamily: {
-        sans: 'var(--font-inter)',
-        display: 'var(--font-dm-sans)',
+        sans: ['Poppins', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
       },
       maxWidth: {
         '2xl': '40rem',
