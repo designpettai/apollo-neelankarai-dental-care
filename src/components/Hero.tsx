@@ -5,6 +5,15 @@ import { BackgroundImage } from '@/components/BackgroundImage';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Input } from '@/components/input';
+import { ImageCarousel } from '@/components/Carousel';
+
+
+import image3 from '@/images/avatars/ap102.jpg';
+import image4 from '@/images/avatars/IMG_9542.jpg';
+import image5 from '@/images/avatars/IMG_9543.jpg';
+import image6 from '@/images/avatars/IMG_9545.jpg';
+import image7 from '@/images/avatars/IMG_9547.jpg';
+
 
 interface FormData {
   firstName: string;
@@ -56,7 +65,7 @@ export function Hero() {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await axios.post('/api/send-email', formData);
+        await axios.post('/api/send-email', formData);
         alert('Appointment booked successfully!');
         setFormData({
           firstName: '',
@@ -82,45 +91,53 @@ export function Hero() {
 
   const today = new Date().toISOString().split('T')[0];
 
+  const carouselItems = [
+    { id: '3', src: image3, alt: 'Image 3 Description' },
+    { id: '4', src: image4, alt: 'Image 4 Description' },
+    { id: '5', src: image5, alt: 'Image 5 Description' },
+    { id: '6', src: image6, alt: 'Image 6 Description' },
+    { id: '7', src: image7, alt: 'Image 7 Description' },
+
+  ];
+
   return (
     <div className="relative py-12 sm:pb-8 sm:pt-8">
       <BackgroundImage className="-bottom-0 top-8" />
       <Container className="relative">
         <form onSubmit={handleSubmit}>
-          <div className='flex flex-col gap-4 md:flex-row md:gap-4 justify-between items-center py-4'>
-            <div className="md:basis-1/2 mx-auto">
-              <div className="py-16 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-7xl mx-auto">
-                  <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                    Let Your Smile Shine with Confidence
-                  </h1>
-                  <p className="mt-4 text-lg text-gray-600">
-                    Expert Care You Can Trust
-                  </p>
-                  <div className="mt-8 text-left max-w-2xl mx-auto">
-                    <p className="text-gray-700 leading-relaxed">
-                      We offer a comprehensive range of speciality driven dental services...
-                    </p>
-                    <p className="mt-4 text-gray-700 leading-relaxed">
-                      Our panel of dentists understand the importance of evidence-based dentistry...
-                    </p>
-                    <p className="mt-4 text-gray-700 leading-relaxed">
-                      Aiming to bring world-class dental care in Suchitra, Kompally, Hyderabad...
-                    </p>
-                  </div>
-                  <div className="mt-6 rounded-lg mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-900 ">Opening Hours</h2>
-                    <h4 className="mt-4 text-lg text-gray-600 flex justify-between">
-                      Monday - Sunday | 10:00 AM to 8:00 PM
-                    </h4>
-                  </div>
-                </div>
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Let Your Smile Shine with Confidence
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">Expert Care You Can Trust</p>
+            <div className="mt-8 max-w-2xl">
+              <p className="text-gray-700 leading-relaxed">
+                We offer a comprehensive range of speciality driven dental services...
+              </p>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                Our panel of dentists understand the importance of evidence-based dentistry...
+              </p>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                Aiming to bring world-class dental care in Suchitra, Kompally, Hyderabad...
+              </p>
+            </div>
+            <div className="mt-6 rounded-lg mb-6">
+              <h2 className="text-2xl font-semibold text-gray-900">Opening Hours</h2>
+              <h4 className="mt-4 text-lg text-gray-600">
+                Monday - Sunday | 10:00 AM to 8:00 PM
+              </h4>
+            </div>
+          </div>
+          <div className='flex flex-col gap-4 md:flex-row md:gap-4 justify-between py-4'>
+            <div className="md:basis-1/2 mx-auto relative">
+              <div className="py-12 px-4 sm:px-6 lg:px-8">
+                <ImageCarousel items={carouselItems} autoPlay={true} interval={3000} />
               </div>
             </div>
-
             <div className="w-full md:basis-1/2 mx-auto px-4 py-6">
               <div className="bg-[#fff] rounded-[20px] p-6 md:p-12">
                 <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
+
                   <div className="sm:col-span-1 mb-6">
                     <label htmlFor="first-name" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                       First name
@@ -139,7 +156,6 @@ export function Hero() {
                       {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName}</p>}
                     </div>
                   </div>
-
                   <div className="sm:col-span-1 mb-6">
                     <label htmlFor="last-name" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                       Last name
@@ -159,7 +175,6 @@ export function Hero() {
                     </div>
                   </div>
                 </div>
-
                 <div className="mb-6">
                   <label htmlFor="email" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                     Email address
@@ -178,6 +193,7 @@ export function Hero() {
                     {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                   </div>
                 </div>
+
                 <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
                   <div className="sm:col-span-1 mb-6">
                     <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
@@ -191,7 +207,7 @@ export function Hero() {
                         className="w-full"
                         value={formData.appointmentDate}
                         onChange={handleChange}
-                        min={today} 
+                        min={today}
                       />
                       {errors.appointmentDate && <p className="text-red-500 text-xs">{errors.appointmentDate}</p>}
                     </div>
@@ -229,6 +245,7 @@ export function Hero() {
                   </div>
                 </div>
 
+
                 <div className="mb-6">
                   <label htmlFor="reason-for-visit" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
                     Reason for Visit
@@ -246,28 +263,12 @@ export function Hero() {
                     {errors.reasonForVisit && <p className="text-red-500 text-xs">{errors.reasonForVisit}</p>}
                   </div>
                 </div>
+
                 <div className="w-full hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
                   <Button className="w-full" type="submit">Book Your Appointment</Button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="mx-auto">
-            <dl className="mt-10 flex flex-col sm:flex-row justify-evenly gap-6 sm:mt-16 sm:gap-10 lg:gap-12">
-              {[
-                ['Happy Patients', '25L+'],
-                ['Specialists', '500'],
-                ['Cities', '25'],
-                ['Location', '175'],
-              ].map(([name, value]) => (
-                <div key={name} className="flex-1 text-center sm:w-1/2 md:w-1/4 w-full mb-6 sm:mb-0">
-                  <dt className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-900 mb-2">{name}</dt>
-                  <dd className="mt-0.5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-500">
-                    <span className="count-up">{value}</span>
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </form>
       </Container>
