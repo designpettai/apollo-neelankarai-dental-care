@@ -6,8 +6,6 @@ import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Input } from '@/components/input';
 import { ImageCarousel } from '@/components/Carousel';
-
-
 import image3 from '@/images/avatars/ap102.jpg';
 import image4 from '@/images/avatars/IMG_9542.jpg';
 import image5 from '@/images/avatars/IMG_9543.jpg';
