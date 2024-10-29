@@ -127,7 +127,7 @@ export function Hero() {
           </div>
           <div className='flex flex-col gap-4 md:flex-row md:gap-4 justify-between py-4'>
             <div className="md:basis-1/2 mx-auto relative">
-              <div className="py-12 px-4 sm:px-6 lg:px-8">
+              <div className="py-10">
                 <ImageCarousel items={carouselItems} autoPlay={true} interval={3000} />
               </div>
             </div>
@@ -261,7 +261,7 @@ export function Hero() {
                   </div>
                 </div>
 
-                <div className="w-full hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
+                <div className="w-full sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
                   <Button className="w-full" type="submit">Book Your Appointment</Button>
                 </div>
               </div>

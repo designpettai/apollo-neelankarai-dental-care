@@ -25,7 +25,7 @@ export function Header() {
   ];
 
   return (
-    <header className="relative z-50 flex-none lg:pt-11">
+    <header className="relative z-50 flex-none py-8 lg:py-11">
       <Container className="flex flex-wrap items-center justify-between lg:flex-nowrap">
         <div className="my-4 lg:mt-0 lg:grow lg:basis-0">
           <Logo className="h-12 w-auto text-slate-900" />
@@ -48,7 +48,7 @@ export function Header() {
 
       <Dialog open={isMenuOpen} onClose={closeMenu} className="md:hidden">
         <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeMenu}></div>
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-12">
           <div className="flex items-center justify-between">
             <Logo className="h-8 w-auto text-slate-900" />
             <button onClick={closeMenu} className="text-gray-600">

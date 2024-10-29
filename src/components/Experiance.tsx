@@ -3,7 +3,7 @@ import { BackgroundImage } from '@/components/BackgroundImage';
 
 export function Experience() {
     return (
-        <div className=" py-20 relative bg-gray-50">
+        <div className=" py-20 relative">
             <BackgroundImage className="-bottom-0 -top-0" />
             <Container className="relative">
                 <div className="mx-auto">

@@ -9,10 +9,10 @@ export function Statistics() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#eef2ff' }} className="py-12">
+    <div className="py-12">
       <Container> 
         <div className="mx-auto">
-          <dl className="flex flex-col sm:flex-row justify-evenly gap-6 sm:gap-10 lg:gap-12" role="definition">
+          <dl className="flex flex-col sm:flex-row justify-evenly gap-6 sm:gap-10 lg:gap-12 items-center sm:items-start" role="definition">
             {stats.map(({ label, value }, index) => (
               <div key={index}>
                 <dt className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-900 mb-2" role="term">
