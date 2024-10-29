@@ -41,6 +41,8 @@
 //     </div>
 //   );
 // }
+
+
 import React from 'react';
 import johnImage from '@/images/avatars/giordano-sagucio.jpg';
 import janeImage from '@/images/avatars/cathlene-burrage.jpg';
@@ -78,7 +80,7 @@ export function Greview() {
     <section className="w-full max-w-7xl p-6 m-auto">
       <Container>
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-medium text-gray-800">Our Customers' Reviews</h1>
+          <h1 className="text-3xl font-medium text-gray-800">Our Customers Reviews</h1>
           <div className="flex items-center justify-center space-x-2 mt-2">
             <span className="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
             <p className="text-gray-600">4.9 rating from {reviewCount} reviews</p>
@@ -133,5 +135,3 @@ export function Greview() {
     </section>
   );
 }
-
-
