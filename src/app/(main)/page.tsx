@@ -14,7 +14,6 @@ export default function Home() {
       <Statistics />
       <Service />
       <Experience />
-
       {/* <Schedule /> */}
       {/* <Speakers /> */}
       {/* <Sponsors /> */}
