@@ -8,9 +8,9 @@ import { Input } from '@/components/input';
 import { ImageCarousel } from '@/components/Carousel';
 import image3 from '@/images/avatars/ap102.jpg';
 import image4 from '@/images/avatars/IMG_9542.jpg';
-import image5 from '@/images/avatars/IMG_9543.jpg';
-import image6 from '@/images/avatars/IMG_9545.jpg';
-import image7 from '@/images/avatars/IMG_9547.jpg';
+import image5 from '@/images/avatars/Slide-2.jpg';
+import image6 from '@/images/avatars/slide-3.jpg';
+import image7 from '@/images/avatars/slide-4.jpg'
 
 
 interface FormData {
