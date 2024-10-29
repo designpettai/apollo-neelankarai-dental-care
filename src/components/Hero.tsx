@@ -12,7 +12,6 @@ import image5 from '@/images/avatars/Slide-2.jpg';
 import image6 from '@/images/avatars/slide-3.jpg';
 import image7 from '@/images/avatars/slide-4.jpg'
 
-
 interface FormData {
   firstName: string;
   lastName: string;
@@ -90,13 +89,13 @@ export function Hero() {
   const today = new Date().toISOString().split('T')[0];
 
   const carouselItems = [
-    { id: '3', src: image3, alt: 'Image 3 Description' },
-    { id: '4', src: image4, alt: 'Image 4 Description' },
-    { id: '5', src: image5, alt: 'Image 5 Description' },
-    { id: '6', src: image6, alt: 'Image 6 Description' },
-    { id: '7', src: image7, alt: 'Image 7 Description' },
-
+    { id: '3', src: image3.src, alt: 'Image 3 Description' },
+    { id: '4', src: image4.src, alt: 'Image 4 Description' },
+    { id: '5', src: image5.src, alt: 'Image 5 Description' },
+    { id: '6', src: image6.src, alt: 'Image 6 Description' },
+    { id: '7', src: image7.src, alt: 'Image 7 Description' },
   ];
+  
 
   return (
     <div className="relative py-12 sm:pb-8 sm:pt-8">
