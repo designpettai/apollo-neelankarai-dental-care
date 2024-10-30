@@ -18,7 +18,7 @@ export function Service() {
           <div className="mt-10 flex sm:flex-nowrap flex-wrap justify-center gap-6 sm:mt-16 lg:gap-12">
             {service.map(({ src, title, description, buttonText }) => (
               <div key={title} className="flex flex-col items-center pb-12 bg-white shadow-xl rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 w-full sm:w-80 lg:w-1/3">
-                <div className="mb-4 flex justify-center items-center">
+                <div className="mb-4 flex justify-center items-center w-full">
                 <img style={{ height: '250px' }} src={src} alt={title} className="rounded-t-lg w-full" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 px-12">{title}</h3>
