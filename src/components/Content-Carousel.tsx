@@ -11,7 +11,7 @@ export function ContentCarousel({
   interval = 500,
 }: {
   className?: string;
-  items: Array<{ id: string; name: string; role: string; review: string; image: string }>;
+  items: Array<{ id: string; name: string; review: string; image: string; rating: number }>;
   autoPlay?: boolean;
   interval?: number;
 }) {
@@ -27,12 +27,12 @@ export function ContentCarousel({
   }, [autoPlay, interval, items.length]);
 
   return (
-    <div className={clsx(className, 'relative')}>
-      <div className="overflow-hidden relative h-[500px] flex items-center">
+    <div className={clsx(className, 'relative bg-[#f6f8f8]')}>
+      <div className="overflow-hidden relative h-[250px] flex items-center justify-center"> {/* Decreased height */}
         {items.map((item, index) => (
           <div
             key={item.id}
-            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-center justify-center p-4', {
+            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-center justify-center p-2', { // Decreased padding
               'opacity-100': index === currentIndex,
               'opacity-0': index !== currentIndex,
             })}
@@ -40,13 +40,16 @@ export function ContentCarousel({
             <Image 
               src={item.image} 
               alt={item.name} 
-              width={100}
-              height={100}
-              className="rounded-full mb-4"
+              width={40}
+              height={40}
+              className="rounded-full mb-2" 
             />
-            <h3 className="text-xl font-bold">{item.name}</h3>
-            <p className="text-gray-600">{item.role}</p>
-            <p className="text-center mt-2">{item.review}</p>
+            <h3 className="text-lg font-bold">{item.name}</h3>
+            <div className="text-yellow-400">
+              {'⭐'.repeat(item.rating)} 
+              {'★'.repeat(5 - item.rating)} 
+            </div>
+            <p className="text-center mt-1 text-sm">{item.review}</p>
           </div>
         ))}
       </div>
