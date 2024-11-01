@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import Image from 'next/image';
 
 export function ImageCarousel({
   className,
@@ -27,26 +26,22 @@ export function ImageCarousel({
   }, [autoPlay, interval, items.length]);
 
   return (
-    <div className={clsx(className, '')}>
-      <div className="overflow-hidden relative h-[500px]">
-        {items.map((item, index) => (
-          <div
-            key={item.id}
-            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0', {
-              'opacity-100': index === currentIndex,
-              'opacity-0': index !== currentIndex,
-            })}
-          >
-            <Image 
-              src={item.src} 
-              alt={item.alt} 
-              layout="fill"
-              objectFit="cover"
-              className="w-full rounded-2xl"
-            />
-          </div>
-        ))}
-      </div>
+    <div className={clsx(className, 'relative overflow-hidden h-[100vh] w-3/4 md:h-[100vh] md:w-3/4', 'h-[400px] w-full')}>
+      {items.map((item, index) => (
+        <div
+          key={item.id}
+          className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 bg-cover bg-center', {
+            'opacity-100': index === currentIndex,
+            'opacity-0': index !== currentIndex,
+          })}
+          style={{
+            backgroundImage: `url(${item.src})`,
+          }}
+          aria-hidden={index !== currentIndex}
+        >
+          <span className="sr-only">{item.alt}</span>
+        </div>
+      ))}
     </div>
   );
 }

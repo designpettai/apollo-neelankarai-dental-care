@@ -3,6 +3,8 @@ import { Service } from '@/components/service';
 import { Experience } from '@/components/Experiance';
 import { Statistics } from '@/components/Statistics';
 import { Greview } from '@/components/Greview';
+import { BannerContent } from '@/components/BannerContent';
+
 // import { Schedule } from '@/components/Schedule';
 // import { Speakers } from '@/components/Speakers';
 // import { Sponsors } from '@/components/Sponsors';
@@ -18,6 +20,7 @@ export default function Home() {
   return (
     <div style={style}>
       <Hero />
+      <BannerContent />
       <Statistics />
       <Service />
       <Experience />
