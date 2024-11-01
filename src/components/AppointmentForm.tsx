@@ -82,7 +82,7 @@ export function AppointmentForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="bg-[#fff] rounded-[20px] p-6 md:p-12 absolute right-[5%] top-1/2 transform translate-x-[0] -translate-y-[61%] w-[90%] md:w-auto md:-translate-y-[62%] -translate-y-[15%]">
+      <div className="bg-[#fff] rounded-[20px] p-6 md:p-12 absolute right-[5%] top-1/2 transform translate-x-[0] -translate-y-[15%] w-[90%] md:w-auto md:-translate-y-[62%] -translate-y-[15%]">
         <div className="mb-4 mt-4 bg-[#06789a] p-4 rounded-lg">
           <h2 style={{ color: '#fd6c1e' }} className="text-2xl font-semibold">Opening Hours</h2>
           <h4 className="text-lg text-white">
