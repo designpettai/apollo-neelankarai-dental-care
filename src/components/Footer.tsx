@@ -56,7 +56,7 @@ export function Footer() {
         </div>
       </Container>
       <div className="mt-12 text-center text-sm text-gray-800">
-        Copyright &copy; {new Date().getFullYear()} Apollo Dental Care Limited, All Rights Reserved. Designed by "Design Petai".
+        Copyright &copy; {new Date().getFullYear()} Apollo Dental Care Limited, All Rights Reserved. Designed by &quot;Design Petai&quot;.
       </div>
     </footer>
   )
