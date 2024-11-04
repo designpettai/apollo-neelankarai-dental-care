@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageCarousel } from '@/components/Carousel';
+import { BannerContent } from '@/components/BannerContent';
 import { AppointmentForm } from './AppointmentForm';
 import image3 from '@/images/avatars/ap102.jpg';
 import image4 from '@/images/avatars/IMG_9542.jpg';
@@ -17,11 +18,20 @@ export function Hero() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row h-[120vh] relative">
-      <div className="w-full">
-        <ImageCarousel items={carouselItems} autoPlay={true} interval={3000} />
+    <div className="relative">
+      <ImageCarousel
+        items={carouselItems}
+        autoPlay={true}
+        interval={5000}
+        className="h-[600px]"
+      />
+      <div className="absolute left-0 right-0 top-[10%] md:top-[20%]">
+        <BannerContent />
       </div>
-      <AppointmentForm />
+      <div className="absolute left-0 right-0 bottom-[-800px] md:bottom-[-320px]">
+        <AppointmentForm />
+      </div>
+
     </div>
   );
 }

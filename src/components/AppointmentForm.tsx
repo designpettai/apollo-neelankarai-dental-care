@@ -1,8 +1,10 @@
-"use client"; // Add this line to indicate it's a client component
+"use client";
 import React, { useState, ChangeEvent, FormEvent, useCallback } from 'react';
 import axios from 'axios';
 import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'; 
+
 
 interface FormData {
   firstName: string;
@@ -14,12 +16,7 @@ interface FormData {
 }
 
 interface Errors {
-  firstName?: string;
-  email?: string;
-  phoneNumber?: string;
-  appointmentDate?: string;
-  timeSlot?: string;
-  reasonForVisit?: string;
+  [key: string]: string | undefined;
 }
 
 export function AppointmentForm() {
@@ -64,7 +61,8 @@ export function AppointmentForm() {
           timeSlot: '',
           reasonForVisit: '',
         });
-      } catch (error) {
+        setErrors({}); // Clear errors on successful submission
+      } catch {
         alert('There was an error booking your appointment. Please try again later.');
       }
     } else {
@@ -75,140 +73,77 @@ export function AppointmentForm() {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: undefined }));
+    setErrors(prev => ({ ...prev, [name]: undefined })); // Clear individual field errors on change
   };
 
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="bg-[#fff] rounded-[20px] p-6 md:p-12 absolute right-[5%] top-1/2 transform translate-x-[0] -translate-y-[15%] w-[90%] md:w-auto md:-translate-y-[62%] -translate-y-[15%]">
-        <div className="mb-4 mt-4 bg-[#06789a] p-4 rounded-lg">
-          <h2 style={{ color: '#fd6c1e' }} className="text-2xl font-semibold">Opening Hours</h2>
-          <h4 className="text-lg text-white">
-            Monday - Sunday | 10:00 AM to 8:00 PM
-          </h4>
-        </div>
-        <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
-          <div className="sm:col-span-1 mb-6">
-            <label htmlFor="first-name" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-              First name
-            </label>
-            <Input
-              id="first-name"
-              name="firstName"
-              type="text"
-              autoComplete="given-name"
-              placeholder="Enter your first name"
-              value={formData.firstName}
-              onChange={handleChange}
-              className='w-full'
-            />
-            {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName}</p>}
-          </div>
-
-          <div className="sm:col-span-1 mb-6">
-            <label htmlFor="phone-number" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-              Phone Number
-            </label>
-            <Input
-              id="phone-number"
-              name="phoneNumber"
-              type="tel"
-              autoComplete="tel"
-              placeholder="Enter your phone number"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              className='w-full'
-            />
-            {errors.phoneNumber && <p className="text-red-500 text-xs">{errors.phoneNumber}</p>}
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <label htmlFor="email" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-            Email address
-          </label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="Enter your email"
-            className="w-full"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
-        </div>
-
-        <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 md:grid-cols-2">
-          <div className="sm:col-span-1 mb-6">
-            <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-              Date of Appointment
-            </label>
-            <Input
-              id="appointment-date"
-              name="appointmentDate"
-              type="date"
-              className="w-full"
-              value={formData.appointmentDate}
-              onChange={handleChange}
-              min={today}
-            />
-            {errors.appointmentDate && <p className="text-red-500 text-xs">{errors.appointmentDate}</p>}
-          </div>
-
-          <div className="sm:col-span-1 mb-6">
-            <label htmlFor="time-slot" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-              Select Time Slot
-            </label>
-            <select
-              id="time-slot"
-              name="timeSlot"
-              className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 focus:border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 hover:border-gray-400 active:text-gray-700 placeholder-[#B5B5B5] appearance-none"
-              value={formData.timeSlot}
-              onChange={handleChange}
-            >
-              <option value="">Select a time slot</option>
-              <option value="9:00AM">9:00 AM</option>
-              <option value="10:00AM">10:00 AM</option>
-              <option value="11:00AM">11:00 AM</option>
-              <option value="12:00PM">12:00 PM</option>
-              <option value="1:00PM">1:00 PM</option>
-              <option value="2:00PM">2:00 PM</option>
-              <option value="3:00PM">3:00 PM</option>
-              <option value="4:00PM">4:00 PM</option>
-            </select>
-            {errors.timeSlot && <p className="text-red-500 text-xs">{errors.timeSlot}</p>}
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <label htmlFor="reason-for-visit" className="text-gray-800 block text-sm font-medium leading-5 mb-1">
-            Reason for Visit
-          </label>
-          <select
-            id="reason-for-visit"
-            name="reasonForVisit"
-            className="w-full h-[48px] rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 focus:border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 hover:border-gray-400 active:text-gray-700 placeholder-[#B5B5B5] appearance-none"
-            value={formData.reasonForVisit}
-            onChange={handleChange}
-          >
-            <option value="">Select a reason</option>
-            <option value="Checkup">Checkup</option>
-            <option value="Cleaning">Cleaning</option>
-            <option value="Filling">Filling</option>
-            <option value="Consultation">Consultation</option>
-            <option value="Emergency">Emergency</option>
-          </select>
-          {errors.reasonForVisit && <p className="text-red-500 text-xs">{errors.reasonForVisit}</p>}
-        </div>
-
-        <div className="w-full sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0">
-          <Button className="w-full" type="submit">Book Your Appointment</Button>
-        </div>
+    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div className="flex flex-col md:flex-row w-full mb-4 md:mb-0 space-y-4 md:space-y-0 md:space-x-4 items-center justify-between">
+        <button
+          className="w-[250px] bg-green-600 text-white flex items-center justify-center py-2 px-4 rounded"
+          onClick={() => window.open("https://wa.me/9360901090", "_blank")}
+        >
+          <FaWhatsapp className="mr-2" />
+          WhatsApp Chat
+        </button>
+        <button
+          className="w-[250px] bg-gray-500 text-white flex items-center justify-center py-2 px-4 rounded"
+          onClick={() => window.location.href = "tel:9360901090"}
+        >
+          <FaPhoneAlt className="mr-2" />
+          Call Us
+        </button>
       </div>
-    </form>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center w-full">
+        <div className="bg-white rounded p-6 md:p-12 w-full flex flex-col items-start">
+          <div className="flex flex-col md:flex-row w-full md:mb-6" >
+            {[
+              { label: 'First name', name: 'firstName', type: 'text', placeholder: 'Enter your first name' },
+              { label: 'Phone Number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' },
+              { label: 'Email address', name: 'email', type: 'email', placeholder: 'Enter your email' },
+            ].map(({ label, name, type, placeholder }) => (
+              <div key={name} className="md:flex-1 mb-6 md:mr-4">
+                <label htmlFor={name} className="text-gray-800 block text-sm font-medium mb-1 text-left">{label}</label>
+                <Input id={name} name={name} type={type} autoComplete={type} placeholder={placeholder} value={formData[name as keyof FormData]} onChange={handleChange} className="w-full" />
+                {errors[name] && <p className="text-red-500 text-xs text-left">{errors[name]}</p>}
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col md:flex-row w-full md:mb-6">
+            <div className="md:flex-1 mb-6 md:mr-4">
+              <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium mb-1 text-left">Date of Appointment</label>
+              <Input id="appointment-date" name="appointmentDate" type="date" className="w-full" value={formData.appointmentDate} onChange={handleChange} min={today} />
+              {errors.appointmentDate && <p className="text-red-500 text-xs text-left">{errors.appointmentDate}</p>}
+            </div>
+            <div className="md:flex-1 mb-6 md:mr-4">
+              <label htmlFor="time-slot" className="text-gray-800 block text-sm font-medium mb-1 text-left">Select Time Slot</label>
+              <select id="time-slot" name="timeSlot" className="w-full h-12 rounded-md border border-gray-300 bg-white px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" value={formData.timeSlot} onChange={handleChange}>
+                <option value="">Select a time slot</option>
+                {['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'].map(slot => (
+                  <option key={slot} value={slot}>{slot}</option>
+                ))}
+              </select>
+              {errors.timeSlot && <p className="text-red-500 text-xs text-left">{errors.timeSlot}</p>}
+            </div>
+            <div className="md:flex-1 mb-6 md:mr-4">
+              <label htmlFor="reason-for-visit" className="text-gray-800 block text-sm font-medium mb-1 text-left">Reason for Visit</label>
+              <select id="reason-for-visit" name="reasonForVisit" className="w-full h-12 rounded-md border border-gray-300 bg-white px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" value={formData.reasonForVisit} onChange={handleChange}>
+                <option value="">Select a reason</option>
+                {['Checkup', 'Cleaning', 'Filling', 'Consultation', 'Emergency'].map(reason => (
+                  <option key={reason} value={reason}>{reason}</option>
+                ))}
+              </select>
+              {errors.reasonForVisit && <p className="text-red-500 text-xs text-left">{errors.reasonForVisit}</p>}
+            </div>
+          </div>
+
+          <div className="w-full">
+            <Button className="w-full" type="submit">Book Your Appointment</Button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }

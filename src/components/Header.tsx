@@ -48,7 +48,7 @@ export function Header() {
 
       <Dialog open={isMenuOpen} onClose={closeMenu} className="md:hidden">
         <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeMenu}></div>
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-12">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white px-4 py-12">
           <div className="flex items-center justify-between">
             <Logo className="h-8 w-auto text-slate-900" />
             <button onClick={closeMenu} className="text-gray-600">

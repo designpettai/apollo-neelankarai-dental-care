@@ -3,7 +3,9 @@ import { Service } from '@/components/service';
 import { Experience } from '@/components/Experiance';
 import { Statistics } from '@/components/Statistics';
 import { Greview } from '@/components/Greview';
-import { BannerContent } from '@/components/BannerContent';
+// import { OurBlog } from '@/components/Our-Blog';
+import { AppointmentForm } from '@/components/AppointmentForm';
+
 
 // import { Schedule } from '@/components/Schedule';
 // import { Speakers } from '@/components/Speakers';
@@ -20,11 +22,13 @@ export default function Home() {
   return (
     <div style={style}>
       <Hero />
-      <BannerContent />
       <Statistics />
       <Service />
       <Experience />
       <Greview />
+      {/* <OurBlog /> */}
+      
+       {/* <Schedule /> */}
       {/* <Schedule /> */}
       {/* <Speakers /> */}
       {/* <Sponsors /> */}

@@ -10,7 +10,7 @@ export function ImageCarousel({
   interval = 500,
 }: {
   className?: string;
-  items: Array<{ id: string; src: string; alt: string }>; 
+  items: Array<{ id: string; src: string; alt: string }>;
   autoPlay?: boolean;
   interval?: number;
 }) {
@@ -26,7 +26,7 @@ export function ImageCarousel({
   }, [autoPlay, interval, items.length]);
 
   return (
-    <div className={clsx(className, 'relative overflow-hidden h-[100vh] w-3/4 md:h-[100vh] md:w-3/4', 'h-[400px] w-full')}>
+    <div className={clsx(className)}>
       {items.map((item, index) => (
         <div
           key={item.id}

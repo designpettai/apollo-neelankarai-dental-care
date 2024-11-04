@@ -8,21 +8,15 @@ export function BannerContent() {
       </h1>
       <p className="mt-4 text-lg text-gray-600">Expert Care You Can Trust</p>
       <div className="mt-8 max-w-2xl">
-        <p className="text-gray-700 leading-relaxed">
+        {/* <p className="text-gray-700 leading-relaxed">
           We offer a comprehensive range of specialty-driven dental services...
-        </p>
-        <p className="mt-4 text-gray-700 leading-relaxed">
           Our panel of dentists understands the importance of evidence-based dentistry...
-        </p>
-        <p className="mt-4 text-gray-700 leading-relaxed">
           Aiming to bring world-class dental care in Suchitra, Kompally, Hyderabad...
-        </p>
-      </div>
-      <div className="mt-6 rounded-lg mb-6">
-        <h2 className="text-2xl font-semibold text-gray-900">Opening Hours</h2>
-        <h4 className="mt-4 text-lg text-gray-600">
-          Monday - Sunday | 10:00 AM to 8:00 PM
-        </h4>
+        </p> */}
+        <div className="mb-4 mt-4 bg-[#06789a] p-4 rounded-lg w-full">
+          <h2 className="text-2xl font-semibold  text-white">Opening Hours</h2>
+          <h4 className="text-lg text-white">Monday - Sunday | 10:00 AM to 8:00 PM</h4>
+        </div>
       </div>
     </div>
   );

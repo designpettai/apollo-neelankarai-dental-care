@@ -63,7 +63,7 @@ export async function POST(req) {
     from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
     to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Internal notification
     subject: 'New Appointment Request',
-    text: `You have a new appointment request from ${firstName} ${lastName}.\n\n` +
+    text: `You have a new appointment request from ${firstName}.\n\n` +
       `Email: ${email}\n` +
       `Appointment Date: ${appointmentDate}\n` +
       `Time Slot: ${timeSlot}\n` +

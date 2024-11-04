@@ -32,7 +32,7 @@ export function ContentCarousel({
         {items.map((item, index) => (
           <div
             key={item.id}
-            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-center justify-center p-2', { // Decreased padding
+            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-center p-2', { // Decreased padding
               'opacity-100': index === currentIndex,
               'opacity-0': index !== currentIndex,
             })}
