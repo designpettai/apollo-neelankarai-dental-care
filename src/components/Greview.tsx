@@ -46,29 +46,27 @@ export function Greview() {
   const secondSliderReviews = [reviews[1], reviews[2], reviews[0]];
 
   return (
-    <section className="w-full max-w-7xl py-20 mx-auto bg-custom-gradient">
+    <section className="w-full py-20 mx-auto bg-custom-gradient">
       <Container>
         <FadeInObserver>
-          <h1 className="text-3xl font-medium text-white fade-in mb-6">Our Customers Reviews</h1>
+          <h1 className="text-3xl font-medium text-white fade-in mb-2">Our Customers Reviews</h1>
         </FadeInObserver>
 
         <FadeInObserver>
-          <div className="flex flex-col md:flex-row justify-between items-left mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-left">
             <div className="flex items-left w-full md:w-auto mb-4 md:mb-0">
-              {/* <Logo className="h-12 w-auto text-slate-900" /> */}
-              <div className="flex flex-col mt-2 md:mt-0 md:ml-4 items-left md:items-start">
+              {/* <Logo /> */}
+              <div className="flex flex-col mt-2 md:mt-0 items-left md:items-start mb-2">
                 <span className="text-yellow-400 text-xl fade-in">⭐⭐⭐⭐⭐</span>
-                <p className="text-white-600 text-sm fade-in">4.9 rating from 250 reviews</p>
+                <p className="text-white text-sm fade-in">4.9 rating from 250 reviews</p>
               </div>
             </div>
-
-
             <a
               href="https://www.google.com/maps/place/Apollo+Dental+Clinic+OMR+Padur+%7C+Invisalign+Provider+%7C+Best+Dental+Clinic+in+OMR+%7C+Dental+Laser+%26+Implant+Center/@12.8068947,80.2224549,17z/data=!3m1!4b1!4m6!3m5!1s0x3a525196b51eb6f7:0x864b1dd15f681180!8m2!3d12.8068947!4d80.2250298!16s%2Fg%2F11y3kcq_d3?entry=ttu&g_ep=EgoyMDI0MTAyMS4xIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="w-auto py-2 border-2 border-white rounded-md bg-none">
+              <Button className="w-auto py-2 border-2 border-white rounded-md bg-none ">
                 Share Your Review
               </Button>
             </a>
@@ -76,7 +74,7 @@ export function Greview() {
         </FadeInObserver>
 
         <FadeInObserver>
-          <div className="p-5 mb-8 fade-in text-white">
+          <div className="mb-8 fade-in text-white">
             <h2 className="text-2xl font-semibold mb-2">Customer Reviews</h2>
             <p className="mb-4">{summary}</p>
           </div>
