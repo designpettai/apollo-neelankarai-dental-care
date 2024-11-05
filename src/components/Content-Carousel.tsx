@@ -32,7 +32,7 @@ export function ContentCarousel({
         {items.map((item, index) => (
           <div
             key={item.id}
-            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-center p-2', { // Decreased padding
+            className={clsx('absolute transition-opacity duration-500 w-full h-full left-0 top-0 flex flex-col items-start p-4', { // Changed items-center to items-start
               'opacity-100': index === currentIndex,
               'opacity-0': index !== currentIndex,
             })}
@@ -44,12 +44,12 @@ export function ContentCarousel({
               height={40}
               className="rounded-full mb-2" 
             />
-            <h3 className="text-lg font-bold">{item.name}</h3>
+            <h3 className="text-lg font-bold text-left">{item.name}</h3> {/* Added text-left */}
             <div className="text-yellow-400">
               {'⭐'.repeat(item.rating)} 
               {'★'.repeat(5 - item.rating)} 
             </div>
-            <p className="text-center mt-1 text-sm">{item.review}</p>
+            <p className="text-left mt-1 text-sm">{item.review}</p> {/* Added text-left */}
           </div>
         ))}
       </div>

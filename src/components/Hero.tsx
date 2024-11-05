@@ -26,10 +26,10 @@ export function Hero() {
         className="h-[600px]"
       />
       <div className="absolute left-0 right-0 top-[10%] md:top-[20%]">
-        <BannerContent />
+        {/* <BannerContent /> */}
       </div>
       <div className="absolute left-0 right-0 bottom-[-800px] md:bottom-[-320px]">
-        <AppointmentForm />
+        {/* <AppointmentForm /> */}
       </div>
 
     </div>

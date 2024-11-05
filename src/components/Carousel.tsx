@@ -26,7 +26,7 @@ export function ImageCarousel({
   }, [autoPlay, interval, items.length]);
 
   return (
-    <div className={clsx(className)}>
+    <div className={clsx(className, 'relative')}>
       {items.map((item, index) => (
         <div
           key={item.id}
@@ -36,6 +36,7 @@ export function ImageCarousel({
           })}
           style={{
             backgroundImage: `url(${item.src})`,
+            backgroundColor: 'rgba(0, 0, 0, 0.459)',
           }}
           aria-hidden={index !== currentIndex}
         >
@@ -45,3 +46,6 @@ export function ImageCarousel({
     </div>
   );
 }
+
+
+

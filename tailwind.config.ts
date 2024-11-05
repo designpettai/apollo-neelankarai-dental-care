@@ -20,6 +20,12 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(141.94deg, #007BA2 8.18%, #0E424C 125.72%)',
+      },
+      colors: {
+        'custom-blue': '#007BA2', 
+      },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
