@@ -6,8 +6,6 @@ import { Logo } from '@/components/Logo';
 import { DpLogo } from '@/components/dp-logo';
 import { Container } from '@/components/Container';
 
-
-
 export function Footer() {
   return (
     <footer className="py-10">
@@ -62,26 +60,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 text-sm text-gray-500 flex justify-between">
-          <div>
+        <div className="mt-8 text-sm text-gray-500 flex flex-col md:flex-row justify-between">
+          <div className="flex-1 mb-4 md:mb-0">
             <div className="flex items-center mb-2">
               <p className="mr-2">Designed with <span className="text-red-500">❤</span> by</p>
               <span className="font-semibold">Apollo Dental Care</span>
             </div>
             <div className="flex items-center">
-              <DpLogo className="h-12 w-[120px] text-slate-900" />
+              <DpLogo className="h-6 w-[120px] text-slate-900" />
             </div>
           </div>
-          <div>
-            <p className="text-right mt-4">
+          <div className="text-left md:text-right">
+            <p className="mt-0">
               &copy; {new Date().getFullYear()} Apollo Dental Care Limited, All Rights Reserved.
             </p>
           </div>
-
-
         </div>
-
       </Container>
-    </footer>
+    </footer >
   );
 }
