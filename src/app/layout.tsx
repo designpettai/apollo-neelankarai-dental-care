@@ -16,8 +16,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Dental Hospital',
-    default: 'Dental Hospital - Your Smile, Our Priority',
+    template: '%s - Apollo Dental Padur',
+    default: 'Apollo Dental Padur',
   },
   description:
     'At Dental Hospital, we are committed to providing the highest quality dental care for you and your family. Discover our comprehensive services and meet our experienced team dedicated to your oral health.',

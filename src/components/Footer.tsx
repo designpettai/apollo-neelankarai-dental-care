@@ -12,8 +12,8 @@ export function Footer() {
       <Container>
         <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between md:space-y-0 space-y-10">
           <div className="flex flex-col items-center md:items-start">
-            <Logo className="h-12 w-auto text-slate-900 mb-4" />
-            <p className="text-lg font-semibold mb-2">Contact us</p>
+            <Logo className="h-12 w-auto text-slate-900 mb-8" />
+            {/* <p className="text-lg font-semibold mb-2">Contact us</p> */}
             <div className="flex space-x-4">
               <Button
                 className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 transition"
@@ -69,6 +69,7 @@ export function Footer() {
             <div className="flex items-center">
               <DpLogo className="h-6 w-[120px] text-slate-900" />
             </div>
+
           </div>
           <div className="text-left md:text-right">
             <p className="mt-0">

@@ -81,11 +81,11 @@ export function AppointmentForm() {
   return ( 
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center ">
       <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center w-full">
-        <div  style={{ boxShadow: '0px 0px 12px 0px #00000014' }} className="bg-white rounded p-4 md:p-6 w-full flex flex-col items-start">
-        <p className="font-inter text-lg font-bold leading-[19.36px] text-left mb-4">Book Your Appointment</p>
+        <div  style={{ boxShadow: '4px 6px 0px 0px #047AA2' }} className="bg-white rounded-2xl p-4 md:p-6 w-full flex flex-col items-start ">
+        <p className="font-inter text-lg font-bold leading-[19.36px] text-left mb-4"> Schedule Your Appointment Now!</p>
           <div className="flex flex-col md:flex-row w-full " >
             {[
-              { label: 'First name', name: 'firstName', type: 'text', placeholder: 'Enter your first name' },
+              { label: 'Name', name: 'firstName', type: 'text', placeholder: 'Enter your Name' },
               { label: 'Phone Number', name: 'phoneNumber', type: 'tel', placeholder: 'Enter your phone number' },
               { label: 'Email address', name: 'email', type: 'email', placeholder: 'Enter your email' },
             ].map(({ label, name, type, placeholder }) => (
@@ -128,7 +128,7 @@ export function AppointmentForm() {
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full text-left">
             <Button type="submit">Book Your Appointment</Button>
           </div>
         </div>
