@@ -25,11 +25,11 @@ export function Hero() {
         interval={5000}
         className="h-[600px]"
       />
-      <div className="absolute left-0 right-0 top-[10%] md:top-[20%]">
-        {/* <BannerContent /> */}
+      <div className="absolute left-0 right-[0%] md:right-[50%] top-0 bottom-0 bg-black bg-opacity-45">
+        <BannerContent />
       </div>
-      <div className="absolute left-0 right-0 bottom-[-800px] md:bottom-[-320px]">
-        {/* <AppointmentForm /> */}
+      <div className="absolute left-0 right-0 bottom-[-800px] md:bottom-[-210px]">
+        <AppointmentForm />
       </div>
 
     </div>
