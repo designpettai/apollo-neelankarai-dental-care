@@ -5,8 +5,6 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 
 interface FormData {
-    firstName: string;
-    email: string;
     mobileNumber: string;
     appointmentDate: string;
     timeSlot: string;
@@ -19,8 +17,6 @@ interface Errors {
 
 export function AppointmentForm({ closeForm }: { closeForm: () => void }) {
     const [formData, setFormData] = useState<FormData>({
-        firstName: '',
-        email: '',
         mobileNumber: '',
         appointmentDate: '',
         timeSlot: '',
@@ -31,14 +27,8 @@ export function AppointmentForm({ closeForm }: { closeForm: () => void }) {
 
     const validate = useCallback((): Errors => {
         const newErrors: Errors = {};
-        if (!formData.firstName) newErrors.firstName = 'First name is required';
-        if (!formData.email) {
-            newErrors.email = 'Email address is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Email address is invalid';
-        }
-        if (!formData.mobileNumber) newErrors.mobileNumber = 'mobile number is required';
-        if (!formData.appointmentDate) newErrors.appointmentDate = 'Appointment date is required';
+        if (!formData.mobileNumber) newErrors.mobileNumber = 'Mobile number is required';
+        if (!formData.appointmentDate) newErrors.appointmentDate = 'Preferred visit date is required';
         if (!formData.timeSlot) newErrors.timeSlot = 'Time slot is required';
         if (!formData.reasonForVisit) newErrors.reasonForVisit = 'Reason for visit is required';
         return newErrors;
@@ -52,8 +42,6 @@ export function AppointmentForm({ closeForm }: { closeForm: () => void }) {
                 await axios.post('/api/send-email', formData);
                 alert('Appointment booked successfully!');
                 setFormData({
-                    firstName: '',
-                    email: '',
                     mobileNumber: '',
                     appointmentDate: '',
                     timeSlot: '',
@@ -93,10 +81,9 @@ export function AppointmentForm({ closeForm }: { closeForm: () => void }) {
                         </button>
                         <p className="font-inter text-lg font-bold leading-[19.36px] text-left mb-4">Schedule Your Appointment Now!</p>
                         <div className="flex flex-col md:flex-row w-full">
-                            {[
-                                { label: 'Name', name: 'firstName', type: 'text', placeholder: 'Enter your Name' },
-                                { label: 'mobile Number', name: 'mobileNumber', type: 'tel', placeholder: 'Enter your mobile number' },
-                                { label: 'Email address', name: 'email', type: 'email', placeholder: 'Enter your email' },
+                            {[ 
+                                { label: 'Mobile Number', name: 'mobileNumber', type: 'tel', placeholder: 'Enter your mobile number' },
+                                { label: 'Preferred Visit Date', name: 'appointmentDate', type: 'date', placeholder: '' },
                             ].map(({ label, name, type, placeholder }) => (
                                 <div key={name} className="md:flex-1 mb-6 md:mr-4">
                                     <label htmlFor={name} className="text-gray-800 block text-sm font-medium mb-1 text-left">{label}</label>
@@ -109,29 +96,16 @@ export function AppointmentForm({ closeForm }: { closeForm: () => void }) {
                                         value={formData[name as keyof FormData]}
                                         onChange={handleChange}
                                         className="w-full"
+                                        min={name === 'appointmentDate' ? today : undefined}
                                     />
                                     {errors[name] && <p className="text-red-500 text-xs text-left">{errors[name]}</p>}
                                 </div>
                             ))}
                         </div>
+
                         <div className="flex flex-col md:flex-row w-full">
                             <div className="md:flex-1 mb-6 md:mr-4">
-                                <label htmlFor="appointment-date" className="text-gray-800 block text-sm font-medium mb-1 text-left">Date of Appointment</label>
-                                <div className="select-container">
-                                    <Input
-                                        id="appointment-date"
-                                        name="appointmentDate"
-                                        type="date"
-                                        className="w-full text-[#6B7280] focus:text-black outline-none"
-                                        value={formData.appointmentDate}
-                                        onChange={handleChange}
-                                        min={today}
-                                    />
-                                    {errors.appointmentDate && <p className="text-red-500 text-xs text-left">{errors.appointmentDate}</p>}
-                                </div>
-                            </div>
-                            <div className="md:flex-1 mb-6 md:mr-4">
-                                <label htmlFor="time-slot" className="text-gray-800 block text-sm font-medium mb-1 text-left">Select Time Slot</label>
+                                <label htmlFor="time-slot" className="text-gray-800 block text-sm font-medium mb-1 text-left">Time</label>
                                 <select
                                     id="time-slot"
                                     name="timeSlot"

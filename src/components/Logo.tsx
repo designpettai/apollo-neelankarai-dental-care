@@ -15,7 +15,7 @@ export const Logo = ({ className, position = 'left', isRounded = false }: LogoPr
         className={clsx(
           position === 'left' ? 'left-image-class' : 'right-image-class',
           'h-16 w-auto',
-          isRounded ? 'rounded-full' : ''
+          isRounded ? 'rounded-lg' : ''
         )}
         src={LogoSrc}
         alt="Apollo Dental Logo"

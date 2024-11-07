@@ -12,7 +12,7 @@ export function Statistics() {
   ];
 
   return (
-    <div className="pt-[800px] md:pt-[220px] py-16">
+    <div className="pt-[600px] md:pt-[220px] py-16">
       <Container>
         <FadeInObserver>
           <h1 className="text-3xl font-medium text-gray-800 text-left mb-6">About Us</h1>
