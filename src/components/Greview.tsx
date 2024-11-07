@@ -54,8 +54,8 @@ export function Greview() {
 
         <FadeInObserver>
           <div className="flex flex-col md:flex-row justify-between items-left">
-            <div className="flex items-left w-full md:w-auto mb-4 md:mb-0">
-              {/* <Logo /> */}
+            <div className="flex items-left w-full md:w-auto mb-4">
+              <Logo className="w-16 h-16 mr-4" isRounded={true} />
               <div className="flex flex-col mt-2 md:mt-0 items-left md:items-start mb-2">
                 <span className="text-yellow-400 text-xl fade-in">⭐⭐⭐⭐⭐</span>
                 <p className="text-white text-sm fade-in">4.9 rating from 250 reviews</p>
@@ -66,7 +66,7 @@ export function Greview() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="w-auto py-2 border-2 border-white rounded-md bg-none ">
+              <Button className="w-auto py-2 border-2 border-white rounded-md bg-none mb-4">
                 Share Your Review
               </Button>
             </a>
@@ -75,7 +75,6 @@ export function Greview() {
 
         <FadeInObserver>
           <div className="mb-8 fade-in text-white">
-            <h2 className="text-2xl font-semibold mb-2">Customer Reviews</h2>
             <p className="mb-4">{summary}</p>
           </div>
         </FadeInObserver>

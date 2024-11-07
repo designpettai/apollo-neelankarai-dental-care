@@ -25,10 +25,10 @@ export function Statistics() {
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 lg:gap-12 items-start">
               {stats.map(({ label, value }, index) => (
                 <div key={index} className="fade-in">
-                  <dt className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-900 mb-2">
+                  <dt className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-2">
                     {label}
                   </dt>
-                  <dd className="mt-0.5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-500">
+                  <dd className="mt-0.5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-800">
                     <span className="count-up">{value}</span>
                   </dd>
                 </div>

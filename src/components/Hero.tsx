@@ -19,11 +19,11 @@ export function Hero() {
 
   return (
     <div className="relative">
-      <ImageCarousel
+      <ImageCarousel  
         items={carouselItems}
         autoPlay={true}
         interval={5000}
-        className="h-[600px]"
+        className="h-[250px] md:h-[600px]"
       />
       <div className="absolute left-0 right-[0%] md:right-[50%] top-0 bottom-0 bg-black bg-opacity-45">
         <BannerContent />
