@@ -42,7 +42,7 @@
 //         <div style="padding: 24px; background-color: #f8fafc; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
 //             <div style="text-align: center; margin-bottom: 16px;">
 //                 <p style="font-weight: bold; font-size: 16px; margin-bottom: 16px;">Contact us</p>
-//                 <p style="font-size: 16px;">Call us: <strong>+91 9360901090</strong></p>
+//                 <p style="font-size: 16px;">Call us: <strong>+91 9360909083</strong></p>
 //                 <p style="font-size: 16px;">Email: <a href="mailto:apollodentalpadur@gmail.com" style="color: #4f46e5;">apollodentalpadur@gmail.com</a></p>
 //             </div>
 //         </div>

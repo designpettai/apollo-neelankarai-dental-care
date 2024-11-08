@@ -33,18 +33,18 @@
 //             </div>
 //             <div className="text-left">
 //               <p className="text-gray-500 text-sm uppercase">Call us</p>
-//               <p className="font-semibold text-black">+91 9360901090</p>
+//               <p className="font-semibold text-black">+91 9360909083</p>
 //             </div>
 //             <div className="flex space-x-4">
 //               <Button
 //                 className="p-2 rounded-full bg-blue-600 text-white"
-//                 onClick={() => window.location.href = "tel:9360901090"}
+//                 onClick={() => window.location.href = "tel:9360909083"}
 //               >
 //                 <ChatBubbleLeftIcon className="h-5 w-5" />
 //               </Button>
 //               <Button
 //                 className="p-2 rounded-full bg-blue-600 text-white"
-//                 onClick={() => window.location.href = "tel:9360901090"}
+//                 onClick={() => window.location.href = "tel:9360909083"}
 //               >
 //                 <PhoneIcon className="h-5 w-5" />
 //               </Button>
@@ -77,18 +77,18 @@
 //               </div>
 //               <div>
 //                 <p className="text-gray-500 text-sm uppercase">Call us</p>
-//                 <p className="font-semibold text-black">+91 9360901090</p>
+//                 <p className="font-semibold text-black">+91 9360909083</p>
 //               </div>
 //               <div className="flex justify-center space-x-6">
 //                 <Button
 //                   className="p-2 rounded-full bg-blue-600 text-white"
-//                   onClick={() => window.location.href = "tel:9360901090"}
+//                   onClick={() => window.location.href = "tel:9360909083"}
 //                 >
 //                   <ChatBubbleLeftIcon className="h-5 w-5" />
 //                 </Button>
 //                 <Button
 //                   className="p-2 rounded-full bg-blue-600 text-white"
-//                   onClick={() => window.location.href = "tel:9360901090"}
+//                   onClick={() => window.location.href = "tel:9360909083"}
 //                 >
 //                   <PhoneIcon className="h-5 w-5" />
 //                 </Button>
@@ -129,12 +129,12 @@ export function Header() {
             </div>
             <div className="text-left">
               <p className="text-gray-500 text-sm uppercase">Call us</p>
-              <p className="font-semibold text-black">+91 9360901090</p>
+              <p className="font-semibold text-black">+91 9360909083</p>
             </div>
             <div className="flex space-x-4">
               <Button
                 className="rounded-full"
-                onClick={() => window.location.href = "tel:+919360901090"}
+                onClick={() => window.location.href = "tel:+919360909083"}
                 aria-label="Phone"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18" fill="none">
@@ -148,7 +148,7 @@ export function Header() {
               </Button>
               <Button
                 className="rounded-full"
-                onClick={() => window.open("https://wa.me/919360901090", "_blank")}
+                onClick={() => window.open("https://wa.me/919360909083", "_blank")}
                 aria-label="WhatsApp"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -193,7 +193,7 @@ export function Header() {
             <div className="flex space-x-4 items-center justify-center w-full mb-2">
               <Button
                 className="rounded-full"
-                onClick={() => window.location.href = "tel:+919360901090"}
+                onClick={() => window.location.href = "tel:+919360909083"}
                 aria-label="Phone"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18" fill="none">
@@ -207,7 +207,7 @@ export function Header() {
               </Button>
               <Button
                 className="rounded-full"
-                onClick={() => window.open("https://wa.me/919360901090", "_blank")}
+                onClick={() => window.open("https://wa.me/919360909083", "_blank")}
                 aria-label="WhatsApp"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -255,7 +255,7 @@ export function Header() {
               </div>
               <div>
                 <p className="text-gray-500 text-sm uppercase">Call us</p>
-                <p className="font-semibold text-black">+91 9360901090</p>
+                <p className="font-semibold text-black">+91 9360909083</p>
               </div>
             </div>
           </div>

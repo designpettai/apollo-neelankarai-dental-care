@@ -16,14 +16,14 @@ export function Service() {
       title: 'Missing tooth? Opt for Dental Implant',
       description: 'A durable, natural - looking solution to replace a missing tooth with a custom - designed dental implant.',
       buttonText: 'Chat us',
-      action: () => window.location.href = "https://wa.me/919360901090"
+      action: () => window.location.href = "https://wa.me/919360909083"
     },
     {
       src: consultationImage.src,
       title: 'CAD-CAM Crowns',
       description: 'Precision - crafted dental crowns using advanced CAD-CAM technology for a perfect fit and natural look.',
       buttonText: 'Call us',
-      action: () => window.location.href = "tel:+919360901090"
+      action: () => window.location.href = "tel:+919360909083"
     },
     {
       src: dentalScanImage.src,

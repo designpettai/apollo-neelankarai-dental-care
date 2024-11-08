@@ -15,7 +15,7 @@ export function Footer() {
             <div className="flex space-x-4">
               <Button
                 className="rounded-full"
-                onClick={() => window.location.href = "tel:+919360901090"}
+                onClick={() => window.location.href = "tel:+919360909083"}
                 aria-label="Phone"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18" fill="none">
@@ -29,7 +29,7 @@ export function Footer() {
               </Button>
               <Button
                 className="rounded-full"
-                onClick={() => window.open("https://wa.me/919360901090", "_blank")}
+                onClick={() => window.open("https://wa.me/919360909083", "_blank")}
                 aria-label="WhatsApp"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -75,7 +75,7 @@ export function Footer() {
           <div className="w-full md:w-1/2">
             <h2 className="text-xl font-semibold text-center md:text-left mb-4">Location</h2>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62248.99771485371!2d80.22503!3d12.806895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525196b51eb6f7%3A0x864b1dd15f681180!2sApollo%20Dental%20Clinic%20OMR%20Padur%20%7C%20Invisalign%20Provider%20%7C%20Best%20Dental%20Clinic%20in%20OMR%20%7C%20Dental%20Laser%20%26%20Implant%20Center!5e0!3m2!1sen!2sin!4v1730729486810!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.324581950535!2d80.2548742!3d12.9510702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d002aa9a405%3A0x5c158fc0ed5c651b!2sApollo%20Dental%20Neelankarai%20-%20ECR!5e0!3m2!1sen!2sin!4v1731068996400!5m2!1sen!2sin"
               width="100%"
               height="200"
               className="rounded"
@@ -83,7 +83,7 @@ export function Footer() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Apollo Dental Clinic Location"
-            ></iframe>
+            />
           </div>
         </div>
         <div className="flex items-center justify-center mb-2 py-12">
