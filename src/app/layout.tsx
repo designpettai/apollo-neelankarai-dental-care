@@ -1,9 +1,9 @@
-// app/layout.tsx
 import { type Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import 'typeface-poppins';
 import clsx from 'clsx';
 import Head from 'next/head';
+import Script from 'next/script';
 import '@/styles/font.css';
 import '@/styles/tailwind.css';
 
@@ -44,6 +44,7 @@ export default function RootLayout({
       )}
     >
       <Head>
+        {/* Google Fonts preloading */}
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
@@ -54,6 +55,21 @@ export default function RootLayout({
           {children}
         </div>
       </body>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-NEDFKJZKCZ"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NEDFKJZKCZ');
+        `}
+      </Script>
     </html>
   );
 }

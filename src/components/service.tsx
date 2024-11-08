@@ -2,34 +2,33 @@
 import { useState } from 'react';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
-import needAdviceImage from '@/images/avatars/Need Advice.jpg';
-import consultationImage from '@/images/avatars/Consultation.jpg';
-import dentalScanImage from '@/images/avatars/3D Dental Scan.jpg';
+import needAdviceImage from '@/images/avatars/Dental.png';
+import consultationImage from '@/images/avatars/CROWNS.png';
+import dentalScanImage from '@/images/avatars/CLEAR ALIGNERS.png';
 import { FadeInObserver } from '@/components/FadeInObserver';
 import { AppointmentForm } from './Pop';
 
 export function Service() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
-
   const service = [
     {
       src: needAdviceImage.src,
-      title: 'Need Advice?',
-      description: 'Connect instantly for personalized dental advice and quick answers.',
+      title: 'Missing tooth? Opt for Dental Implant',
+      description: 'A durable, natural - looking solution to replace a missing tooth with a custom - designed dental implant.',
       buttonText: 'Chat us',
       action: () => window.location.href = "https://wa.me/919360901090"
     },
     {
       src: consultationImage.src,
-      title: 'Consultation',
-      description: 'Speak with our dental specialists for immediate support and scheduling.',
+      title: 'CAD-CAM Crowns',
+      description: 'Precision - crafted dental crowns using advanced CAD-CAM technology for a perfect fit and natural look.',
       buttonText: 'Call us',
       action: () => window.location.href = "tel:+919360901090"
     },
     {
       src: dentalScanImage.src,
-      title: '3D Dental Scan',
-      description: 'Know more on Invisalign Aligners, Dental Implants, SVE RCT',
+      title: 'Invisalign Provider',
+      description: 'Clear aligners offering a discreet and comfortable solution for straightening teeth without traditional braces.',
       buttonText: 'Book Now',
       action: () => setShowAppointmentForm(true)
     }
@@ -58,8 +57,6 @@ export function Service() {
             ))}
           </div>
         </div>
-
-        {/* Display the appointment form only when showAppointmentForm is true */}
         {showAppointmentForm && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
             <AppointmentForm closeForm={() => setShowAppointmentForm(false)} />
