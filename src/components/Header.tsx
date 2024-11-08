@@ -115,19 +115,15 @@ export function Header() {
       <Container className="px-4 lg:px-8">
         <div className="container mx-auto w-full lg:w-auto lg:flex lg:items-center lg:justify-between">
 
-          <div className="my-4 lg:mt-0 lg:grow lg:basis-0 mb-8 lg:mb-4">
-            <Logo className="h-12 w-auto text-slate-900" />
+          <div className="my-4 lg:mt-0 lg:grow lg:basis-0 mb-8 lg:mb-4 ">
+            <Logo className="h-12 w-auto text-slate-900 flex items-center justify-center md:items-start md:justify-start" />
           </div>
 
-          {/* Info and Action Buttons for Large Screens */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            {/* Opening Hours Section */}
             <div className="text-left">
               <p className="text-gray-500 text-sm uppercase">Opening Hours</p>
               <p className="font-semibold text-black">Monday - Sunday | 10:00 AM to 8:00 PM</p>
             </div>
-
-            {/* Call Us Section */}
             <div className="text-left">
               <p className="text-gray-500 text-sm uppercase">Call us</p>
               <p className="font-semibold text-black">+91 9360901090</p>
@@ -191,10 +187,8 @@ export function Header() {
               </Button>
             </div>
           </div>
-
-          {/* Mobile View - Stacked Layout */}
           <div className="lg:hidden flex flex-col items-start mt-4 space-y-4 w-full">
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center justify-center w-full mb-2">
               <Button
                 className="rounded-full"
                 onClick={() => window.location.href = "tel:+919360901090"}
