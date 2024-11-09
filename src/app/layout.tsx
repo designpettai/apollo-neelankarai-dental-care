@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import 'typeface-poppins';
 import clsx from 'clsx';
 import Head from 'next/head';
-import Script from 'next/script';
 import '@/styles/font.css';
 import '@/styles/tailwind.css';
 
@@ -16,8 +15,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Apollo Dental Padur',
-    default: 'Apollo Dental Padur',
+    template: '%s - Apollo Dental Neelankarai-ECR',
+    default: 'Apollo Dental ',
   },
   description:
     'At Dental Hospital, we are committed to providing the highest quality dental care for you and your family. Discover our comprehensive services and meet our experienced team dedicated to your oral health.',
@@ -44,7 +43,7 @@ export default function RootLayout({
       )}
     >
       <Head>
-        {/* Google Fonts preloading */}
+
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
@@ -55,21 +54,6 @@ export default function RootLayout({
           {children}
         </div>
       </body>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-NEDFKJZKCZ"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-NEDFKJZKCZ');
-        `}
-      </Script>
     </html>
   );
 }

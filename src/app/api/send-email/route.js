@@ -43,7 +43,7 @@
 //             <div style="text-align: center; margin-bottom: 16px;">
 //                 <p style="font-weight: bold; font-size: 16px; margin-bottom: 16px;">Contact us</p>
 //                 <p style="font-size: 16px;">Call us: <strong>+91 9360909083</strong></p>
-//                 <p style="font-size: 16px;">Email: <a href="mailto:apollodentalpadur@gmail.com" style="color: #4f46e5;">apollodentalpadur@gmail.com</a></p>
+//                 <p style="font-size: 16px;">Email: <a href="mailto:apollodentalNeelankarai-OMR@gmail.com" style="color: #4f46e5;">apollodentalpadur@gmail.com</a></p>
 //             </div>
 //         </div>
 
@@ -101,8 +101,8 @@ export async function POST(req) {
   });
 
   const appointmentRequestMailOptions = {
-    from: `"Appointment System" <${process.env.EMAIL_USER}>`, // Sender address
-    to: `"Appointment System" <${process.env.EMAIL_USER}>`, // Internal notification
+    from: `"Appointment System" <${process.env.EMAIL_USER}>`,
+    to: `"Appointment System" <${process.env.EMAIL_USER}>`,
     subject: 'New Appointment Request',
     text: `You have a new appointment request from mobile number: ${mobileNumber}.\n\n` +
       `Preferred Appointment Date: ${appointmentDate}\n` +

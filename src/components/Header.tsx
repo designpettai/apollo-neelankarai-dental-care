@@ -173,7 +173,7 @@ export function Header() {
                   />
                 </svg>
               </Button>
-              <Button
+              {/* <Button
                 className="rounded-full"
                 onClick={() => window.open("https://www.instagram.com/apollodentalomr/?hl=en", "_blank")}
                 aria-label="Instagram"
@@ -186,7 +186,7 @@ export function Header() {
                     fill="white"
                   />
                 </svg>
-              </Button>
+              </Button> */}
             </div>
           </div>
           <div className="lg:hidden flex flex-col items-start mt-4 space-y-4 w-full">
@@ -232,7 +232,7 @@ export function Header() {
                   />
                 </svg>
               </Button>
-              <Button
+              {/* <Button
                 className="rounded-full"
                 onClick={() => window.open("https://www.instagram.com/apollodentalomr/?hl=en", "_blank")}
                 aria-label="Instagram"
@@ -245,7 +245,7 @@ export function Header() {
                     fill="white"
                   />
                 </svg>
-              </Button>
+              </Button> */}
             </div>
             <div className="w-full flex justify-between">
               <div>

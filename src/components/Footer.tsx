@@ -43,7 +43,7 @@ export function Footer() {
               </Button>
               <Button
                 className="rounded-full"
-                onClick={() => window.location.href = "mailto:apollodentalpadur@gmail.com"}
+                onClick={() => window.location.href = "mailto:Apollodentalecr@gmail.com "}
                 aria-label="Email"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 16" fill="none">
@@ -55,7 +55,7 @@ export function Footer() {
                   />
                 </svg>
               </Button>
-              <Button
+              {/* <Button
                 className="rounded-full"
                 onClick={() => window.open("https://www.instagram.com/apollodentalomr/?hl=en", "_blank")}
                 aria-label="Instagram"
@@ -68,7 +68,7 @@ export function Footer() {
                     fill="white"
                   />
                 </svg>
-              </Button>
+              </Button> */}
             </div>
           </div>
 

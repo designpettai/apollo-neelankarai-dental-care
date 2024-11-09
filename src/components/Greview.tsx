@@ -62,7 +62,7 @@ export function Greview() {
               </div>
             </div>
             <a
-              href="https://www.google.com/maps/place/Apollo+Dental+Clinic+OMR+Padur+%7C+Invisalign+Provider+%7C+Best+Dental+Clinic+in+OMR+%7C+Dental+Laser+%26+Implant+Center/@12.8068947,80.2224549,17z/data=!3m1!4b1!4m6!3m5!1s0x3a525196b51eb6f7:0x864b1dd15f681180!8m2!3d12.8068947!4d80.2250298!16s%2Fg%2F11y3kcq_d3?entry=ttu&g_ep=EgoyMDI0MTAyMS4xIKXMDSoASAFQAw%3D%3D"
+              href="https://www.google.com/maps/place/Apollo+Dental+Clinic+OMR+Neelankarai-OMR+%7C+Invisalign+Provider+%7C+Best+Dental+Clinic+in+OMR+%7C+Dental+Laser+%26+Implant+Center/@12.8068947,80.2224549,17z/data=!3m1!4b1!4m6!3m5!1s0x3a525196b51eb6f7:0x864b1dd15f681180!8m2!3d12.8068947!4d80.2250298!16s%2Fg%2F11y3kcq_d3?entry=ttu&g_ep=EgoyMDI0MTAyMS4xIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
             >

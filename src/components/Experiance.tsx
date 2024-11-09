@@ -12,7 +12,7 @@ export function Experience() {
                                 Advanced Dentistry. Exceptional Care.
                             </h1>
                             <p className="text-4xl font-bold text-gray-800 mb-4 fade-in">
-                                Experience Dentistry Designed for You at Padur’s Apollo Dental Clinic.
+                                Experience Dentistry Designed for You at Neelankarai-ECR’s Apollo Dental Clinic.
                             </p>
                         </div>
                         <div className="flex flex-col lg:flex-row gap-8">
